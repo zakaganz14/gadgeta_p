@@ -1,0 +1,27 @@
+/* Pengaturan Khusus Print & Animasi */
+@media print {
+    .no-print { display: none !important; }
+    body { background-color: white !important; -webkit-print-color-adjust: exact; margin: 0; padding: 0; }
+    @page { margin: 1cm; }
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.4s ease-out forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styling Notifikasi */
+#toast {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+}
+#toast.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
